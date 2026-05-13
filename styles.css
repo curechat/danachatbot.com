@@ -108,7 +108,9 @@ ul { list-style: none; }
 .mobile-menu { display: none; border-top: 1px solid var(--border); background: var(--background); padding: 1rem; }
 .mobile-menu.open { display: flex; flex-direction: column; gap: 1rem; }
 @media (min-width: 768px) { .mobile-menu { display: none !important; } }
-.mobile-menu a { font-size: 0.875rem; font-weight: 500; color: var(--muted-fg); display: flex; align-items: center; gap: 0.25rem; }
+.mobile-menu a { font-size: 0.875rem; font-weight: 500; display: flex; align-items: center; gap: 0.25rem; }
+.mobile-menu a:not(.btn-primary) { color: var(--muted-fg); }
+.mobile-menu a.btn-primary { color: var(--primary-fg); font-weight: 700; }
 
 /* ========== HERO ========== */
 .hero {
@@ -272,7 +274,7 @@ ul { list-style: none; }
 .feature-desc { font-size: 0.875rem; color: var(--muted-fg); }
 
 /* ========== WHY RESPONSIBLE AI ========== */
-.stats-bar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 3rem; }
+stats-bar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 3rem; }
 @media (min-width: 768px) { .stats-bar { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
 .stat-card {
   background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem;
