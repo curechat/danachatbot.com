@@ -1,593 +1,373 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dana — Governed Health AI for Your Patients</title>
-  <meta name="description" content="Deploy responsible AI health education with full organizational oversight. Available via WhatsApp, web portal, or API integration.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="./dana-icon.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dana — Governed AI for Health Organizations</title>
+  <meta name="description" content="Deploy responsible AI health education with full organizational oversight. Available via WhatsApp, web portal, or API. Built by CureChat." />
+  <meta name="author" content="CureChat Ltd." />
+  <meta property="og:title" content="Dana — Governed AI for Health Organizations" />
+  <meta property="og:description" content="Safe, guideline-based AI health education for organizations. Never prescribes, never diagnoses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/dana-icon.png" />
+  <link rel="icon" href="assets/dana-icon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="./" class="logo">
-      <img src="./dana-icon.png" alt="Dana">
+<header class="site-header" id="mobile-nav">
+  <div class="container nav mobile-nav">
+    <a href="index.html" class="brand">
+      <img src="assets/dana-icon.png" alt="Dana logo" width="38" height="38" />
       <span>Dana</span>
     </a>
-    <nav class="desktop-nav">
-      <a href="./demo">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-        Try Demo
+    <a href="#mobile-nav" class="menu-toggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </a>
+    <nav class="nav-links">
+      <a href="#" class="menu-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </a>
-      <a href="./auth/signin">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-        Admin
-      </a>
-      <a href="mailto:support@curechat.co?subject=Dana Demo Request" class="btn-primary">Talk to Sales</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="organizations.html">For Organizations</a>
+      <a href="governance.html">Governance</a>
+      <a href="api.html">API</a>
+      <a href="contact.html" class="btn btn-primary">Talk to Sales</a>
     </nav>
-    <button class="mobile-toggle" onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-label="Toggle menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-    </button>
-  </div>
-  <div id="mobile-menu" class="mobile-menu">
-    <a href="./demo">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-      Try Demo
-    </a>
-    <a href="./auth/signin">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-      Admin Portal
-    </a>
-    <a href="mailto:support@curechat.co?subject=Dana Demo Request" class="btn-primary" style="justify-content:center;padding:.75rem 1rem;">Talk to Sales</a>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-bg-1"></div>
-  <div class="hero-bg-2"></div>
-  <div class="container">
-    <div class="hero-grid">
-      <!-- Content -->
-      <div class="hero-content">
-        <div class="hero-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-          <span id="hero-counter">0</span>+ patients reached
-        </div>
+<main>
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-7.6-3.9L3 21l5-1.4a8.4 8.4 0 0 0 4 1A8.5 8.5 0 0 0 21 11.5z"/></svg>
+          50,000+ patients reached
+        </span>
         <h1>
-          Governed <span class="accent">Health AI</span>
+          Governed <span class="text-gradient">Health AI</span>
           <span class="sub">For Your Patients</span>
         </h1>
-
-        <p class="hero-desc">
-          Deploy responsible AI health education with full organizational oversight. 
+        <p class="lead">
+          Deploy responsible AI health education with full organizational oversight.
           Available via WhatsApp, web portal, or API integration.
         </p>
 
-        <div class="condition-badges">
-          <span class="condition-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        <div class="condition-pills">
+          <span class="condition-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             Diabetes
           </span>
-          <span class="condition-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+          <span class="condition-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             Hypertension
           </span>
-          <span class="condition-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>
+          <span class="condition-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>
             Asthma
           </span>
         </div>
 
         <div class="hero-cta">
-          <a href="mailto:support@curechat.co?subject=Dana Demo Request" class="btn-primary-lg">
+          <a href="mailto:support@curechat.co?subject=Dana%20Demo%20Request" class="btn btn-primary btn-lg">
             Talk to Sales
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="./demo" class="btn-outline-lg">See How It Works</a>
+          <a href="governance.html" class="btn btn-outline btn-lg">See How It Works</a>
         </div>
 
-        <div class="trust-badges">
-          <span class="trust-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-            Full Governance
-          </span>
-          <span class="trust-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
-            Complete Audit Trail
-          </span>
-          <span class="trust-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
-            Organizational Oversight
-          </span>
+        <div class="hero-trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Full Governance</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg> Complete Audit Trail</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg> Organizational Oversight</span>
         </div>
 
-        <div class="api-link-wrap">
-          <a href="./api.html" class="api-link">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Also available as API for custom integrations
-          </a>
-        </div>
+        <a href="api.html" class="api-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Also available as API for custom integrations
+        </a>
       </div>
 
-      <!-- Phone Mockup -->
-      <div class="phone-mockup-wrap">
-        <div class="phone-frame">
-          <div class="phone-screen">
-            <div class="wa-header">
-              <div class="wa-avatar"><img src="./dana-icon.png" alt="Dana"></div>
-              <div>
-                <div class="wa-name">Dana Health</div>
-                <div class="wa-status">Your Health Companion</div>
+      <div>
+        <div class="phone-wrap float">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="wa-header">
+                <div class="wa-avatar"><img src="assets/dana-icon.png" alt="Dana" width="34" height="34" /></div>
+                <div>
+                  <p class="wa-name">Dana Health</p>
+                  <p class="wa-sub">Your Health Companion</p>
+                </div>
               </div>
-            </div>
-            <div class="wa-chat">
-              <div class="msg msg-user">
-                <p>What should my blood sugar be before meals?</p>
-                <div class="msg-time">9:41 AM</div>
-              </div>
-              <div class="msg msg-bot">
-                <p>Great question! 🎯 For most adults with diabetes, the target fasting blood sugar is typically <strong>80-130 mg/dL</strong> before meals.</p>
-                <p style="margin-top:8px">However, your personal target may differ based on your care plan. Would you like me to explain more about blood sugar targets?</p>
-                <div class="msg-time">9:41 AM ✓✓</div>
-              </div>
-              <div class="msg msg-user">
-                <p>Yes please!</p>
-                <div class="msg-time">9:42 AM</div>
-              </div>
-              <div class="typing">
-                <span class="typing-dot"></span>
-                <span class="typing-dot"></span>
-                <span class="typing-dot"></span>
+              <div class="wa-chat">
+                <div class="wa-bubble out">
+                  What should my blood sugar be before meals?
+                  <span class="wa-time">9:41 AM</span>
+                </div>
+                <div class="wa-bubble in">
+                  Great question! 🎯 For most adults with diabetes, the target fasting blood sugar is typically <strong>80–130 mg/dL</strong> before meals.
+                  <br/><br/>Your personal target may differ based on your care plan. Want me to explain more?
+                  <span class="wa-time">9:41 AM ✓✓</span>
+                </div>
+                <div class="wa-bubble out">
+                  Yes please!
+                  <span class="wa-time">9:42 AM</span>
+                </div>
+                <div class="wa-bubble in">
+                  <div class="wa-typing"><span></span><span></span><span></span></div>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="phone-badge bottom-left">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-            Governed Response
-          </div>
-          <div class="phone-badge top-right">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+          <div class="phone-badge tl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             Full Audit Trail
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== IMPACT STATS ===== -->
-<section class="impact-stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
-        <p class="stat-value" data-target="12" data-suffix="+">0</p>
-        <p class="stat-label">Organizations</p>
-      </div>
-      <div class="stat-item">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <p class="stat-value" data-target="50000" data-suffix="+">0</p>
-        <p class="stat-label">Patients Reached</p>
-      </div>
-      <div class="stat-item">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
-        <p class="stat-value" data-target="3" data-suffix="">0</p>
-        <p class="stat-label">Chronic Conditions</p>
-      </div>
-      <div class="stat-item">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m2 12 20 0"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <p class="stat-value" data-target="12" data-suffix="">0</p>
-        <p class="stat-label">Languages</p>
-      </div>
-      <div class="stat-item">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-        <p class="stat-value" data-target="100" data-suffix="%">0</p>
-        <p class="stat-label">Governed Responses</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CASE STUDY ===== -->
-<section class="section section-muted">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-        Case Study
-      </span>
-      <h2 class="section-title">Deployed in Weeks, Not Months</h2>
-      <p class="section-desc">See how leading health organizations are using Dana to deliver governed patient education at scale.</p>
-    </div>
-
-    <div class="case-card">
-      <div class="case-grid">
-        <div class="case-content">
-          <p class="case-label">Proven at Scale</p>
-          <h3 class="case-name">Dana Health Initiative</h3>
-          <p class="case-country">South Africa</p>
-          <p class="case-desc">Dana deployed governed diabetes education directly to 20,000 patients via WhatsApp, demonstrating scalable chronic disease management in emerging markets.</p>
-          <div class="case-stats">
-            <div>
-              <div class="case-stat-value">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                20,000+
-              </div>
-              <p class="case-stat-label">Patients Reached</p>
-            </div>
-            <div>
-              <div class="case-stat-value">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-                WhatsApp
-              </div>
-              <p class="case-stat-label">Delivery Channel</p>
-            </div>
-          </div>
-          <a href="mailto:support@curechat.co?subject=Dana Implementation Inquiry" class="case-link">
-            Learn how we can help your organization
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-        <div class="case-features">
-          <h4>Why Organizations Choose Dana</h4>
-          <div class="feature-item">
-            <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
-            <div><p class="feature-title">Full Governance Control</p><p class="feature-desc">Every response follows your clinical guidelines</p></div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div><p class="feature-title">Rapid Deployment</p><p class="feature-desc">Go live in weeks with WhatsApp or web portal</p></div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div><p class="feature-title">Scale Without Risk</p><p class="feature-desc">From pilot to population with complete oversight</p></div>
+          <div class="phone-badge bl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Governed Response
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== WHY RESPONSIBLE AI ===== -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-badge">The Problem We're Solving</span>
-      <h2 class="section-title">Why Healthcare Needs Responsible AI</h2>
-      <p class="section-desc">Patients are already using AI for health questions. The question isn't <strong>whether</strong> — it's <strong>how safely</strong>.</p>
-    </div>
-
-    <div class="stats-bar">
-      <div class="stat-card">
-        <div class="stat-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-        <div class="stat-card-value">17%</div>
-        <p class="stat-card-label">of U.S. adults use AI for health advice monthly</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-        <div class="stat-card-value">25%</div>
-        <p class="stat-card-label">of under-30s use AI for health questions</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-        <div class="stat-card-value">83%</div>
-        <p class="stat-card-label">misdiagnosis rate in one pediatric AI study</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-        <div class="stat-card-value">29%</div>
-        <p class="stat-card-label">trust AI chatbots for health information</p>
-      </div>
-    </div>
-    <p class="stats-source">Sources: KFF Health Misinformation Tracking Poll 2024, JAMA Pediatrics 2024</p>
-
-    <div class="problem-grid">
-      <!-- Column 1 -->
-      <div class="problem-card">
-        <div class="problem-icon" style="background:#eff6ff;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg></div>
+          <div class="stat-value">12+</div><div class="stat-label">Organizations</div>
         </div>
-        <h3>Patients Are Already Using AI</h3>
-        <div class="problem-point"><span class="problem-dot" style="background:#2563eb;"></span><span>Millions search AI for health answers daily</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#2563eb;"></span><span>Using tools not designed for medical responsibility</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#2563eb;"></span><span>No guardrails, no escalation, no accountability</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#2563eb;"></span><span>Often receiving confident but unsafe guidance</span></div>
-      </div>
-      <!-- Column 2 -->
-      <div class="problem-card">
-        <div class="problem-icon" style="background:#fffbeb;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        <div>
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="stat-value">50,000+</div><div class="stat-label">Patients Reached</div>
         </div>
-        <h3>General AI Wasn't Built for Healthcare</h3>
-        <div class="problem-point"><span class="problem-dot" style="background:#d97706;"></span><span>Optimized for engagement, not safety</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#d97706;"></span><span>No clinical governance or boundaries</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#d97706;"></span><span>Cannot distinguish safe from unsafe questions</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#d97706;"></span><span>Rewards creativity over restraint</span></div>
-      </div>
-      <!-- Column 3 -->
-      <div class="problem-card">
-        <div class="problem-icon" style="background:#ecfdf5;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <div>
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="stat-value">3</div><div class="stat-label">Chronic Conditions</div>
         </div>
-        <h3>Healthcare Requires Responsibility</h3>
-        <div class="problem-point"><span class="problem-dot" style="background:#059669;"></span><span>Clinical boundaries that cannot be crossed</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#059669;"></span><span>Clear escalation to human care</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#059669;"></span><span>Auditability and accountability</span></div>
-        <div class="problem-point"><span class="problem-dot" style="background:#059669;"></span><span>Ongoing validation and updates</span></div>
+        <div>
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/><path d="M12 2a15 15 0 0 0 0 20"/></svg></div>
+          <div class="stat-value">12</div><div class="stat-label">Languages</div>
+        </div>
+        <div>
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="stat-value">100%</div><div class="stat-label">Governed Responses</div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="solution-box">
-      <div class="solution-label">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-        Dana's Purpose
+  <!-- WHY -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The Problem We're Solving</span>
+        <h2>Why Healthcare Needs Responsible AI</h2>
+        <p>Patients are already using AI for health questions. The question isn't <strong style="color:var(--fg)">whether</strong> — it's <strong style="color:var(--fg)">how safely</strong>.</p>
       </div>
-      <blockquote class="solution-quote">
-        "Dana exists to provide safe, governed health education — so patients get support without clinical risk, and healthcare systems can trust the boundaries."
-      </blockquote>
-      <p class="solution-attribution">
-        Governed by <strong>CureChat</strong> — ensuring clinical integrity and ongoing validation
-      </p>
-    </div>
-  </div>
-</section>
 
-<!-- ===== FOR ORGANIZATIONS ===== -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Built for Health Organizations</h2>
-      <p class="section-desc">Dana provides governed AI health education for organizations that need monitoring and oversight before delivering AI to patients.</p>
-    </div>
+      <div class="cite-grid">
+        <div class="cite-card"><div class="cite-value">17%</div><div class="cite-label">of U.S. adults use AI for health advice monthly</div></div>
+        <div class="cite-card"><div class="cite-value">25%</div><div class="cite-label">of under-30s use AI for health questions</div></div>
+        <div class="cite-card"><div class="cite-value">83%</div><div class="cite-label">misdiagnosis rate in one pediatric AI study</div></div>
+        <div class="cite-card"><div class="cite-value">29%</div><div class="cite-label">trust AI chatbots for health information</div></div>
+      </div>
+      <p class="cite-source">Sources: KFF Health Misinformation Tracking Poll 2024 · JAMA Pediatrics 2024</p>
 
-    <div class="org-grid">
-      <div class="org-card"><div class="org-card-inner">
-        <div class="org-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
-        <div><h3>HMOs &amp; Health Systems</h3><p>Deploy governed patient education across your member base</p></div>
-      </div></div>
-      <div class="org-card"><div class="org-card-inner">
-        <div class="org-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg></div>
-        <div><h3>Pharmaceutical Companies</h3><p>Patient education at scale with evidence-based guidance</p></div>
-      </div></div>
-      <div class="org-card"><div class="org-card-inner">
-        <div class="org-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
-        <div><h3>Governments &amp; NGOs</h3><p>Public health impact at population scale</p></div>
-      </div></div>
-      <div class="org-card"><div class="org-card-inner">
-        <div class="org-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
-        <div><h3>Digital Health Platforms</h3><p>Integrate responsible AI into your patient journey</p></div>
-      </div></div>
-      <div class="org-card"><div class="org-card-inner">
-        <div class="org-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
-        <div><h3>Large Employers</h3><p>Employee wellness programs that reduce absenteeism</p></div>
-      </div></div>
-      <div class="org-card"><div class="org-card-inner">
-        <div class="org-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
-        <div><h3>Patient Advocacy Groups</h3><p>Trusted education for your community members</p></div>
-      </div></div>
-    </div>
-
-    <!-- Deployment Options -->
-    <div class="deploy-options">
-      <h3 class="deploy-title">Flexible Deployment Options</h3>
-      <div class="deploy-grid">
-        <div class="deploy-card">
-          <div class="deploy-icon" style="background:rgba(37,211,102,0.1);">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      <div class="problem-grid" style="margin-top: 56px;">
+        <div class="problem-card blue">
+          <div class="problem-icon blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h4>WhatsApp</h4>
-          <p>Reach patients on the platform they already use daily</p>
+          <h3>Patients Are Already Using AI</h3>
+          <ul>
+            <li>Millions search AI for health answers daily</li>
+            <li>Using tools not designed for medical responsibility</li>
+            <li>No guardrails, no escalation, no accountability</li>
+            <li>Often receiving confident but unsafe guidance</li>
+          </ul>
         </div>
-        <div class="deploy-card">
-          <div class="deploy-icon" style="background:rgba(22,155,128,0.1);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#169B80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+        <div class="problem-card amber">
+          <div class="problem-icon amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
-          <h4>Web Portal</h4>
-          <p>Branded patient portal with your organization's identity</p>
+          <h3>General AI Wasn't Built for Healthcare</h3>
+          <ul>
+            <li>Optimized for engagement, not safety</li>
+            <li>No clinical governance or boundaries</li>
+            <li>Cannot distinguish safe from unsafe questions</li>
+            <li>Rewards creativity over restraint</li>
+          </ul>
         </div>
-        <div class="deploy-card">
-          <div class="deploy-icon" style="background:rgba(22,155,128,0.1);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#169B80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        <div class="problem-card emerald">
+          <div class="problem-icon emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h4>API Integration</h4>
-          <p>Embed Dana directly into your existing applications</p>
+          <h3>Healthcare Requires Responsibility</h3>
+          <ul>
+            <li>Clinical boundaries that cannot be crossed</li>
+            <li>Clear escalation to human care</li>
+            <li>Auditability and accountability</li>
+            <li>Ongoing validation and updates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="purpose">
+        <div class="purpose-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Dana's Purpose
+        </div>
+        <blockquote>
+          "Dana exists to provide safe, governed health education — so patients get support without clinical risk, and healthcare systems can trust the boundaries."
+        </blockquote>
+        <p class="by">Governed by <strong>CureChat</strong> — ensuring clinical integrity and ongoing validation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section class="section-muted">
+    <div class="container">
+      <div class="case-study">
+        <span class="eyebrow">Case Study</span>
+        <h2>20,000 patients reached via WhatsApp in South Africa</h2>
+        <p>
+          The Dana Health Initiative deployed governed diabetes education directly to patients
+          on the channel they already use every day — demonstrating that responsible AI can scale
+          chronic disease support in emerging markets.
+        </p>
+        <div class="case-grid">
+          <div class="case-stat"><div class="v">20,000+</div><div class="l">Patients Reached</div></div>
+          <div class="case-stat"><div class="v">WhatsApp</div><div class="l">Primary Channel</div></div>
+          <div class="case-stat"><div class="v">24/7</div><div class="l">Always Available</div></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="section-cta">
-      <a href="mailto:support@curechat.co?subject=Dana for Organizations" class="btn-primary-lg">
-        Discuss Your Use Case
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
+  <!-- AI COMPARISON -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">See the Difference</span>
+        <h2>Same Question. Different Responsibility.</h2>
+        <p>When a patient asks an urgent health question, the response matters. Here's how general AI compares to Dana's governed approach.</p>
+      </div>
 
-<!-- ===== AI COMPARISON ===== -->
-<section class="section section-muted">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-badge">See the Difference</span>
-      <h2 class="section-title">Same Question. Different Responsibility.</h2>
-      <p class="section-desc">When a patient asks an urgent health question, the response matters. Here's how general AI compares to Dana's governed approach.</p>
-    </div>
-
-    <div class="patient-q">
-      <div class="patient-q-card">
-        <div class="patient-q-label">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      <div class="q-card">
+        <div class="q-card-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           Patient asks:
         </div>
-        <p class="patient-q-text">"My blood sugar is 280 and I feel dizzy. What should I do?"</p>
+        <p>"My blood sugar is 280 and I feel dizzy. What should I do?"</p>
       </div>
-    </div>
 
-    <div class="comparison-grid">
-      <!-- General AI -->
-      <div class="comp-card danger">
-        <div class="comp-header">
-          <div class="comp-avatar">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      <div class="compare-grid">
+        <div class="compare-col bad">
+          <div class="compare-head">
+            <div class="compare-head-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div>
+              <h3>General AI</h3>
+              <p>Ungoverned response</p>
+            </div>
           </div>
-          <div><p class="comp-name">General AI</p><p class="comp-sub">Ungoverned response</p></div>
-        </div>
-        <div class="comp-body">
-          <div class="comp-bubble">Based on your symptoms, you may be experiencing hyperglycemia. You could try taking additional insulin, drinking water, and monitoring closely. Some people find that 2-4 units of rapid-acting insulin helps bring levels down quickly...</div>
-          <ul class="comp-list">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><span>Suggests medication dosing</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><span>No escalation to professional care</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><span>Confident but potentially dangerous</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><span>No acknowledgment of emergency signs</span></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Dana -->
-      <div class="comp-card safe">
-        <div class="comp-header">
-          <div class="comp-avatar">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          <div class="compare-body">
+            <div class="compare-quote">
+              Based on your symptoms, you may be experiencing hyperglycemia. You could try taking additional insulin, drinking water, and monitoring closely. Some people find that 2–4 units of rapid-acting insulin helps bring levels down quickly...
+            </div>
+            <ul class="compare-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Suggests medication dosing</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No escalation to professional care</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Confident but potentially dangerous</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No acknowledgment of emergency signs</li>
+            </ul>
           </div>
-          <div><p class="comp-name">Dana</p><p class="comp-sub">Governed by CureChat</p></div>
         </div>
-        <div class="comp-body">
-          <div class="comp-bubble">A blood sugar of 280 with dizziness needs attention. I'm not able to advise on medication changes, but I recommend contacting your healthcare provider or seeking medical care soon. Dizziness can be a sign that your body needs support. Would you like help with what to tell your doctor?</div>
-          <ul class="comp-list">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Acknowledges urgency without panic</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Does not prescribe or dose</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Clear escalation to professional care</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Offers supportive next step</span></li>
-          </ul>
+
+        <div class="compare-col good">
+          <div class="compare-head">
+            <div class="compare-head-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h3>Dana</h3>
+              <p>Governed by CureChat</p>
+            </div>
+          </div>
+          <div class="compare-body">
+            <div class="compare-quote">
+              A blood sugar of 280 with dizziness needs attention. I'm not able to advise on medication changes, but I recommend contacting your healthcare provider or seeking medical care soon. Dizziness can be a sign that your body needs support. Would you like help with what to tell your doctor?
+            </div>
+            <ul class="compare-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Acknowledges urgency without panic</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Does not prescribe or dose</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Clear escalation to professional care</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Offers supportive next step</li>
+            </ul>
+          </div>
         </div>
       </div>
+      <p class="text-center" style="margin-top: 32px; color: var(--fg-muted); font-size: .92rem;">
+        Both AI systems are helpful — but only one is built for clinical responsibility.
+      </p>
     </div>
+  </section>
 
-    <p class="comparison-note">Both AI systems are helpful — but only one is built for clinical responsibility.</p>
-  </div>
-</section>
-
-<!-- ===== TRUST SECTION ===== -->
-<section class="section">
-  <div class="container">
-    <div class="max-w-4xl">
-      <div class="section-header">
-        <span class="warning-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+  <!-- TRUST -->
+  <section class="section-muted">
+    <div class="container" style="max-width: 880px;">
+      <div class="text-center">
+        <span class="alert-banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Educational Only
         </span>
-        <h2 class="section-title">Dana Never Prescribes. Never Diagnoses.</h2>
-        <p class="section-desc">Dana is a responsible AI system for health education, built on clinical standards and governed for safety. It is not a medical device and does not replace healthcare providers.</p>
+        <h2>Dana never prescribes. Never diagnoses.</h2>
+        <p style="font-size:1.1rem; max-width: 640px; margin: 0 auto 32px;">
+          Dana is a responsible AI system for health education, built on clinical standards and governed for safety.
+          It is not a medical device and does not replace healthcare providers.
+        </p>
       </div>
-
-      <div class="trust-grid">
-        <div class="trust-card">
-          <div class="trust-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3>Safety-Governed</h3>
-          <p>Operated under CureChat's clinical safety framework</p>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1.3-3.8.7l-1.3-.7c-1.1-.6-1.4-2-.7-3.1L14 5"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></div>
-          <h3>Guideline-Based</h3>
-          <p>Built on international diabetes care standards</p>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <h3>Privacy Protected</h3>
-          <p>Encrypted conversations, never shared</p>
-        </div>
-      </div>
-
-      <div class="clinical-box">
-        <div class="clinical-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
-        <div>
-          <h4>Clinical Validation</h4>
-          <p>Dana's approach is currently being evaluated in a clinical study with a large healthcare organization to measure its impact on patient education and engagement.</p>
-        </div>
-      </div>
-
-      <div class="disclaimer-box">
-        <strong>Important:</strong> Dana provides general health education and support. This is not medical advice. For any health concerns, please consult a qualified healthcare professional. In emergencies, contact your local emergency services immediately.
+      <div class="disclaimer">
+        <strong>Important:</strong> Dana provides general health education and support. This is not medical advice.
+        For any health concerns, please consult a qualified healthcare professional. In emergencies, contact your
+        local emergency services immediately.
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== CTA ===== -->
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-inner">
-      <h2>Ready to Bring Governed AI to Your Patients?</h2>
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Bring governed AI to your patients.</h2>
       <p>Join healthcare organizations delivering safe, monitored AI health education with full organizational oversight.</p>
-      <div class="cta-buttons">
-        <a href="mailto:support@curechat.co?subject=Dana Demo Request" class="btn-cta-primary">
-          Schedule a Demo
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-        <a href="./api.html" class="btn-cta-outline">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          Explore API Integration
-        </a>
+      <div class="flex-center">
+        <a href="contact.html" class="btn btn-on-dark btn-lg">Schedule a Demo</a>
+        <a href="api.html" class="btn btn-ghost-on-dark btn-lg">Explore the API</a>
       </div>
-      <p class="cta-contact">Contact: support@curechat.co</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== FOOTER ===== -->
+</main>
+
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img src="./dana-icon.png" alt="Dana">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="assets/dana-icon.png" alt="Dana logo" width="32" height="32" />
       <span>Dana</span>
-    </div>
-    <p class="footer-desc">Responsible health education, built on clinical standards and governed for safety. Free, 24/7, on WhatsApp.</p>
-    <div class="footer-bottom">
-      <p>&copy; <script>document.write(new Date().getFullYear())</script> Curechat Ltd. All rights reserved.</p>
-    </div>
+    </a>
+    <p>Responsible health education, built on clinical standards and governed for safety.</p>
+    <p>&copy; 2026 CureChat Ltd. All rights reserved.</p>
   </div>
 </footer>
-
-<!-- Animated counters -->
-<script>
-(function(){
-  // Hero counter
-  var heroTarget = 50000;
-  var heroEl = document.getElementById('hero-counter');
-  var dur = 2000, steps = 60, inc = heroTarget/steps, cur = 0;
-  var t = setInterval(function(){
-    cur += inc;
-    if(cur >= heroTarget){ heroEl.textContent = heroTarget.toLocaleString(); clearInterval(t); }
-    else { heroEl.textContent = Math.floor(cur).toLocaleString(); }
-  }, dur/steps);
-
-  // Stats counters with IntersectionObserver
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting) return;
-      var el = entry.target;
-      if(el.dataset.animated) return;
-      el.dataset.animated = '1';
-      var target = parseInt(el.dataset.target);
-      var suffix = el.dataset.suffix || '';
-      var d = 2000, s = 60, i = target/s, c = 0;
-      var timer = setInterval(function(){
-        c += i;
-        if(c >= target){ el.textContent = target.toLocaleString() + suffix; clearInterval(timer); }
-        else { el.textContent = Math.floor(c).toLocaleString() + suffix; }
-      }, d/s);
-      observer.unobserve(el);
-    });
-  }, {threshold: 0.1});
-
-  document.querySelectorAll('.stat-value[data-target]').forEach(function(el){ observer.observe(el); });
-})();
-</script>
 
 </body>
 </html>

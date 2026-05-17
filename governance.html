@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Governance — How Dana stays safe</title>
+  <meta name="description" content="Dana's 5-stage governance pipeline: classification, template selection, response generation, safety validation, and audit logging." />
+  <link rel="icon" href="assets/dana-icon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header" id="mobile-nav">
+  <div class="container nav mobile-nav">
+    <a href="index.html" class="brand">
+      <img src="assets/dana-icon.png" alt="Dana logo" width="36" height="36" />
+      <span>Dana</span>
+    </a>
+    <a href="#mobile-nav" class="menu-toggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </a>
+    <nav class="nav-links">
+      <a href="#" class="menu-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </a>
+      <a href="index.html">Home</a>
+      <a href="organizations.html">For Organizations</a>
+      <a href="governance.html">Governance</a>
+      <a href="api.html">API</a>
+      <a href="contact.html" class="btn btn-primary">Talk to Sales</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding: 80px 0 40px;">
+    <div class="container" style="max-width: 820px; text-align: center;">
+      <span class="eyebrow">Governance Engine</span>
+      <h1>Every answer passes through <span style="color:var(--primary)">five safety gates.</span></h1>
+      <p class="lead" style="margin: 0 auto;">
+        Dana doesn't just generate text — it routes every patient question through a structured pipeline that
+        classifies intent, selects a guideline-bound template, validates safety, and logs the outcome.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-top: 24px;">
+    <div class="container">
+      <div class="cards cards-3">
+        <div class="card">
+          <div class="icon"><span style="font-weight:800;font-size:1.1rem;">1</span></div>
+          <h3>Classification</h3>
+          <p>Each message is classified by intent (education, symptom, dosing, emergency) and risk level before any response is generated.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><span style="font-weight:800;font-size:1.1rem;">2</span></div>
+          <h3>Template Selection</h3>
+          <p>The right response template is selected from a curated, organization-tunable library — never improvised from scratch.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><span style="font-weight:800;font-size:1.1rem;">3</span></div>
+          <h3>Guideline-Bound Generation</h3>
+          <p>The response is generated within the boundaries of ADA 2025, AHA/ACC 2024, and GINA 2024 clinical guidelines.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><span style="font-weight:800;font-size:1.1rem;">4</span></div>
+          <h3>Safety Validation</h3>
+          <p>Two layers of validators check for dosing language, diagnostic claims, and emergency triggers — blocking unsafe outputs.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><span style="font-weight:800;font-size:1.1rem;">5</span></div>
+          <h3>Audit Logging</h3>
+          <p>Every classification, template, validation result, and final response is logged for organizational review.</p>
+        </div>
+        <div class="card card-accent">
+          <div class="icon icon-solid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Result: 100% governed</h3>
+          <p>No raw LLM output ever reaches a patient. Every response is shaped, checked, and recorded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-muted">
+    <div class="container" style="max-width: 880px;">
+      <div class="section-head">
+        <span class="eyebrow">Clinical Foundations</span>
+        <h2>Built on the standards your clinicians already follow.</h2>
+      </div>
+      <div class="cards cards-3">
+        <div class="card text-center"><h3>ADA 2025</h3><p>American Diabetes Association Standards of Care</p></div>
+        <div class="card text-center"><h3>AHA / ACC 2024</h3><p>American Heart Association hypertension guidelines</p></div>
+        <div class="card text-center"><h3>GINA 2024</h3><p>Global Initiative for Asthma management strategy</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Want the full governance walkthrough?</h2>
+      <p>We'll show you live examples of how Dana handles edge cases — dosing requests, emergencies, off-scope questions, and more.</p>
+      <a href="contact.html" class="btn btn-ghost btn-lg" style="background:#fff;color:var(--primary);">Request a Walkthrough</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="assets/dana-icon.png" alt="Dana logo" width="32" height="32" />
+      <span>Dana</span>
+    </a>
+    <p>Responsible health education, built on clinical standards and governed for safety.</p>
+    <p>&copy; 2026 CureChat Ltd. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
